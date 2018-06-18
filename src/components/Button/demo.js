@@ -5,21 +5,23 @@ import WhiteSpace from '../Blank';
 const ButtonDemos = () => {
   return (
     <div style={{ margin: 10 }}>
-      <Button>first</Button>
+      <Button>default</Button>
       <WhiteSpace />
-      <Button disable={true}>first</Button>
+      <Button disable={true}>default</Button>
       <WhiteSpace />
       <Button type="primary">primary</Button>
       <WhiteSpace />
-      <Button type="primary" disable={true}>
+      <Button type="primary" disable>
         primary
       </Button>
       <WhiteSpace />
       <Button type="warning">warning</Button>
       <WhiteSpace />
-      <Button type="warning" disable={true}>
+      <Button type="warning" disable>
         warning
       </Button>
+      <WhiteSpace />
+      <Button loading>Loading</Button>
     </div>
   );
 };

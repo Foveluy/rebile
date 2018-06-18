@@ -1,6 +1,7 @@
 .rb-button {
     background-color: #fff;
     position: relative;
+    display: block;
 }
 
 /* .rb-button::before {

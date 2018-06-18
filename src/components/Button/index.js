@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import Spiner from '../Spiner';
 
 class Button extends React.Component {
   state = {
@@ -8,10 +9,11 @@ class Button extends React.Component {
   static defaultProps = {
     type: 'default',
     disable: false,
+    loading: false,
   }
 
   render() {
-    const { children, type, disable } = this.props;
+    const { children, type, disable, loading } = this.props;
     const { isClick } = this.state;
 
     const touchEvent = disable
@@ -24,6 +26,13 @@ class Button extends React.Component {
             this.setState({ isClick: false });
           },
         };
+
+    // for button loading
+    const isLoading = loading ? (
+      <div style={{ marginRight: 140 }}>
+        <Spiner color={type === 'default' ? undefined : 'white'} />
+      </div>
+    ) : null;
 
     return (
       <button
@@ -39,6 +48,7 @@ class Button extends React.Component {
         }}
         {...touchEvent}
       >
+        {isLoading}
         {children}
       </button>
     );
