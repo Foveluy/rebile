@@ -26,7 +26,7 @@
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
-    "jest": "20.0.4",
+    "jest": "^23.1.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -48,7 +48,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "cov": "npm test -- --coverage",
+    "ci": "npm run cov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "pre-commit": [
     "lint"
@@ -96,6 +98,11 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-cli": "^23.1.0",
     "pre-commit": "^1.2.2"
   }
 }
