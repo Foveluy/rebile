@@ -10,12 +10,15 @@ class Button extends React.Component {
     type: 'default',
     disable: false,
     loading: false,
+    inline: false,
+    size: 'large',
   }
 
   render() {
-    const { children, type, disable, loading } = this.props;
+    const { children, type, disable, loading, inline, size } = this.props;
     const { isClick } = this.state;
 
+    // for touch
     const touchEvent = disable
       ? {}
       : {
@@ -34,15 +37,18 @@ class Button extends React.Component {
       </div>
     ) : null;
 
+    const isInline = inline ? 'rb-button-inline' : '';
+    const _size = 'rb-button-' + size;
+
     return (
       <button
-        className={isClick ? `rb-button ${type} rb-button-active` : `rb-button ${type}`}
+        className={
+          isClick ? `rb-button ${type} ${isInline} ${_size} rb-button-active` : `rb-button ${type} ${_size} ${isInline}`
+        }
         style={{
+          padding: '0 15px',
           opacity: disable ? 0.5 : 1,
-          width: '100%',
           border: 'none',
-          fontSize: 18,
-          height: 47,
           borderRadius: 5,
           outline: 'none',
         }}

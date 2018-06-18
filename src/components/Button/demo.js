@@ -22,6 +22,22 @@ const ButtonDemos = () => {
       </Button>
       <WhiteSpace />
       <Button loading>Loading</Button>
+      <WhiteSpace />
+      <Button inline>default</Button>
+      <Button type="primary" inline>
+        primary
+      </Button>
+      <Button type="warning" inline>
+        warning
+      </Button>
+      <WhiteSpace />
+      <Button size="small">default</Button>
+      <Button type="primary" size="small">
+        primary
+      </Button>
+      <Button type="warning" size="small">
+        warning
+      </Button>
     </div>
   );
 };
