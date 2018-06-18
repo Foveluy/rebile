@@ -8,12 +8,12 @@
 
 [npm-image]: https://img.shields.io/npm/v/rebile.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/rebile
-[travis-image]: https://img.shields.io/travis/215566435/rebile.svg?style=flat-square
-[travis-url]: https://travis-ci.org/215566435/rebile
-[coveralls-image]: https://img.shields.io/coveralls/215566435/rebile.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/215566435/rebile?branch=master
-[david-image]: https://img.shields.io/david/215566435/rebile.svg?style=flat-square
-[david-url]: https://david-dm.org/215566435/rebile
+[travis-image]: https://img.shields.io/travis/Foveluy/rebile.svg?style=flat-square
+[travis-url]: https://travis-ci.org/Foveluy/rebile
+[coveralls-image]: https://img.shields.io/coveralls/Foveluy/rebile.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/Foveluy/rebile?branch=master
+[david-image]: https://img.shields.io/david/Foveluy/rebile.svg?style=flat-square
+[david-url]: https://david-dm.org/Foveluy/rebile
 [node-image]: https://img.shields.io/badge/node.js-%3E=_8.0-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/rebile.svg?style=flat-square
