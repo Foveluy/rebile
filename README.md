@@ -1,9 +1,8 @@
 # rebile
+
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
-[![David deps][david-image]][david-url]
-[![node version][node-image]][node-url]
 [![npm download][download-image]][download-url]
 
 [npm-image]: https://img.shields.io/npm/v/rebile.svg?style=flat-square
@@ -18,7 +17,6 @@
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/rebile.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rebile
-
 
 A react UI for mobile
 
