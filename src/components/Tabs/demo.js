@@ -8,6 +8,7 @@ const TabsDemo = () => (
     <div>tab1</div>
     <div>tab2</div>
     <div>tab3</div>
+    <div>tab4</div>
   </Tab>
 );
 
