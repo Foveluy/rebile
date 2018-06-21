@@ -4,7 +4,6 @@ import './index.css';
 // const win = window;
 
 const UnderLineBar = ({ leftDistance, tintColor, direction }) => {
-  console.log(direction);
   return (
     <div
       className={`rb-tab-underline ${direction}`}
@@ -98,12 +97,7 @@ class Tab extends React.Component {
         <div
           ref={node => (this.contentContainer = node)}
           className="rb-tab-content-container"
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            transition: 'all .3s',
-            transform: `translateX(-${contentWidth * currentPage}px)`,
-          }}
+          style={{ transform: `translateX(-${contentWidth * currentPage}px)` }}
         >
           {children.map((child, idx) => {
             return (

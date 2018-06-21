@@ -12,6 +12,12 @@
     flex-direction: row;
 }
 
+.rb-tab-content-container {
+    display: flex;
+    flex-direction: row;
+    transition: all .3s;
+}
+
 .rb-tab-header-container>.rb-tab-item {
     display: flex;
     justify-content: center;
