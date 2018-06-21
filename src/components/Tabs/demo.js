@@ -1,14 +1,13 @@
 import React from 'react';
 import Tab from '.';
 
-const Tabs = [{ title: 'first' }, { title: 'second' }, { title: 'third' }, { title: 'forth' }];
+const Tabs = [{ title: 'First' }, { title: 'Second' }, { title: 'Third' }];
 
 const TabsDemo = () => (
   <Tab tabs={Tabs}>
-    <div>tab1</div>
-    <div>tab2</div>
-    <div>tab3</div>
-    <div>tab4</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab1</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab2</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab3</div>
   </Tab>
 );
 

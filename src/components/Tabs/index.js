@@ -11,7 +11,7 @@ const UnderLineBar = ({ leftDistance, tintColor }) => {
         left: `${leftDistance}%`,
         borderColor: tintColor,
         transition: 'all ease-in-out .3s',
-        top: 42,
+        top: 42.5,
       }}
     />
   );
@@ -27,6 +27,8 @@ class Tab extends React.Component {
     tabs: [],
     initialPage: 0,
     tintColor: '#FF9900',
+    onTabPress: undefined,
+    onChange: undefined,
   }
   componentDidMount() {
     this.setState({
@@ -35,9 +37,18 @@ class Tab extends React.Component {
     });
   }
   handleHeaderTouch = (e, idx) => {
-    this.setState({
-      currentPage: idx,
-    });
+    // tab press callback
+    this.props.onTabPress && this.props.onTabPress(e, this.props.tabs[idx]);
+
+    this.setState(
+      {
+        currentPage: idx,
+      },
+      () => {
+        // tab change callback
+        this.props.onChange && this.props.onChange(e, this.props.tabs[idx]);
+      }
+    );
   }
 
   renderHeader = (currentPage, tabs) => {
@@ -67,45 +78,45 @@ class Tab extends React.Component {
           })}
           <UnderLineBar tintColor={this.props.tintColor} leftDistance={itemWith * currentPage} />
         </div>
+        <div className="rb-line" />
+      </div>
+    );
+  }
+
+  renderContent = (currentPage, contentWidth) => {
+    const { children } = this.props;
+    return (
+      <div className="rb-tab-content-wrap">
+        <div
+          ref={node => (this.contentContainer = node)}
+          className="rb-tab-content-container"
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            transition: 'all .3s',
+            transform: `translateX(-${contentWidth * currentPage}px)`,
+          }}
+        >
+          {children.map((child, idx) => {
+            return (
+              <div style={{ minWidth: contentWidth }} key={idx}>
+                {child}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
 
   render() {
-    const { children, tabs } = this.props;
+    const { tabs } = this.props;
     const { currentPage, contentWidth } = this.state;
 
     return (
       <div className="rb-tab-container">
         {this.renderHeader(currentPage, tabs)}
-        <div className="rb-tab-content-wrap">
-          <div
-            ref={node => (this.contentContainer = node)}
-            className="rb-tab-content-container"
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              transition: 'all .3s',
-              transform: `translateX(-${contentWidth * currentPage}px)`,
-            }}
-          >
-            {children.map((child, idx) => {
-              return (
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    minWidth: contentWidth,
-                  }}
-                  key={idx}
-                >
-                  {child}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        {this.renderContent(currentPage, contentWidth)}
       </div>
     );
   }
