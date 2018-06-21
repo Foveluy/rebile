@@ -3,14 +3,15 @@ import './index.css';
 
 // const win = window;
 
-const UnderLineBar = ({ leftDistance, tintColor }) => {
+const UnderLineBar = ({ leftDistance, tintColor, direction }) => {
+  console.log(direction);
   return (
     <div
-      className="rb-tab-underline"
+      className={`rb-tab-underline ${direction}`}
       style={{
         left: `${leftDistance}%`,
+        right: `${(100 / 3) * 2 - leftDistance}%`,
         borderColor: tintColor,
-        transition: 'all ease-in-out .3s',
         top: 42.5,
       }}
     />
@@ -21,6 +22,7 @@ class Tab extends React.Component {
   state = {
     currentPage: 0,
     contentWidth: 375,
+    direction: '',
   }
 
   static defaultProps = {
@@ -30,6 +32,7 @@ class Tab extends React.Component {
     onTabPress: undefined,
     onChange: undefined,
   }
+
   componentDidMount() {
     this.setState({
       currentPage: this.props.initialPage,
@@ -43,6 +46,7 @@ class Tab extends React.Component {
     this.setState(
       {
         currentPage: idx,
+        direction: this.state.currentPage > idx ? 'left' : 'right',
       },
       () => {
         // tab change callback
@@ -76,7 +80,11 @@ class Tab extends React.Component {
               </div>
             );
           })}
-          <UnderLineBar tintColor={this.props.tintColor} leftDistance={itemWith * currentPage} />
+          <UnderLineBar
+            direction={this.state.direction}
+            tintColor={this.props.tintColor}
+            leftDistance={itemWith * currentPage}
+          />
         </div>
         <div className="rb-line" />
       </div>

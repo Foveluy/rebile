@@ -7,18 +7,6 @@
     overflow: hidden;
 }
 
-.rb-tab-header-wrapper::after {
-    height: 1px;
-    content: ' ';
-    width: 100%;
-    border-bottom: 1px solid #f0f0f0;
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    transform: scaleY(0.5);
-    -webkit-transform: scaleY(0.5);
-}
-
 .rb-tab-header-container {
     display: flex;
     flex-direction: row;
@@ -45,5 +33,12 @@
     border-width: 1px;
     border-style: solid;
     position: absolute;
-    width: 33.33333%;
+}
+
+.rb-tab-underline.left {
+    transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s, left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.rb-tab-underline.right {
+    transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1), left 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s;
 }
