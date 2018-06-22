@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import SwipeableViews from 'react-swipeable-views';
+import SwipeableViews from 'react-swipeable-views'; /** https://react-swipeable-views.com/api/api/ */
 
 // const win = window;
 
@@ -81,6 +81,7 @@ class Tab extends React.Component {
               <div
                 style={{ color: active === 'rb-tab-active' ? this.props.tintColor : '' }}
                 onTouchEnd={e => this.handleHeaderTouch(e, idx)}
+                onClick={e => this.handleHeaderTouch(e, idx)}
                 className={`rb-tab-item ${active}`}
                 key={idx}
               >
@@ -124,7 +125,7 @@ class Tab extends React.Component {
     if (this.props.swipeable) {
       return (
         <div ref={node => (this.contentContainer = node)}>
-          <SwipeableViews resistance onChangeIndex={this.handleSwipeChangeIndex} index={currentPage}>
+          <SwipeableViews enableMouseEvents resistance onChangeIndex={this.handleSwipeChangeIndex} index={currentPage}>
             {Child()}
           </SwipeableViews>
         </div>
@@ -148,7 +149,6 @@ class Tab extends React.Component {
   }
 
   render() {
-    console.log('render---');
     return (
       <div className="rb-tab-container">
         <this.renderHeader {...this.props} {...this.state} />
