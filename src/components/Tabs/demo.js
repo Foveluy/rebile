@@ -32,6 +32,26 @@ const Over3Tabs = () => (
   </Tab>
 );
 
+const NoAnimation = () => (
+  <Tab tabs={Tabs5} animation={false}>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab1</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab2</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab3</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab4</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab5</div>
+  </Tab>
+);
+
+const Swipeable = () => (
+  <Tab tabs={Tabs5} swipeable={true}>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab1</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab2</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab3</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab4</div>
+    <div style={{ height: 100, backgroundColor: 'white' }}>tab5</div>
+  </Tab>
+);
+
 const TabsDemo = () => (
   <div>
     <Normal />
@@ -39,6 +59,10 @@ const TabsDemo = () => (
     <TintColor />
     <WhiteSpace />
     <Over3Tabs />
+    <WhiteSpace />
+    <NoAnimation />
+    <WhiteSpace />
+    <Swipeable />
   </div>
 );
 

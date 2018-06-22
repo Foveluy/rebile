@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.css';
+import SwipeableViews from 'react-swipeable-views';
 
 // const win = window;
 
-const UnderLineBar = ({ leftDistance, tintColor, direction }) => {
+const UnderLineBar = ({ leftDistance, tintColor, direction, animation }) => {
   return (
     <div
-      className={`rb-tab-underline ${direction}`}
+      className={`rb-tab-underline ${animation ? direction : ''}`}
       style={{
         left: `${leftDistance}%`,
         right: `${(100 / 3) * 2 - leftDistance}%`,
@@ -30,6 +31,8 @@ class Tab extends React.Component {
     tintColor: '#FF9900',
     onTabPress: undefined,
     onChange: undefined,
+    animation: true,
+    swipeable: false,
   }
 
   componentDidMount() {
@@ -54,7 +57,7 @@ class Tab extends React.Component {
     );
   }
 
-  renderHeader = (currentPage, tabs) => {
+  renderHeader = ({ currentPage, tabs }) => {
     const itemWith = 33.3333;
     // controlling the header move around
     let translate = `translateX(${currentPage > 1 ? -itemWith * (currentPage - 1) : 0}%)`;
@@ -63,7 +66,13 @@ class Tab extends React.Component {
     translate = currentPage + 1 === tabs.length ? `translateX(${-itemWith * (currentPage - 2)}%)` : translate;
     return (
       <div className="rb-tab-header-wrapper">
-        <div className="rb-tab-header-container" style={{ transform: translate, transition: 'all ease-in-out .3s' }}>
+        <div
+          className="rb-tab-header-container"
+          style={{
+            transform: translate,
+            transition: this.isAnimation(),
+          }}
+        >
           {tabs.map((tab, idx) => {
             // when is active
             // change className for change color
@@ -83,6 +92,7 @@ class Tab extends React.Component {
             direction={this.state.direction}
             tintColor={this.props.tintColor}
             leftDistance={itemWith * currentPage}
+            animation={this.props.animation}
           />
         </div>
         <div className="rb-line" />
@@ -90,35 +100,59 @@ class Tab extends React.Component {
     );
   }
 
-  renderContent = (currentPage, contentWidth) => {
-    const { children } = this.props;
-    return (
-      <div className="rb-tab-content-wrap">
-        <div
-          ref={node => (this.contentContainer = node)}
-          className="rb-tab-content-container"
-          style={{ transform: `translateX(-${contentWidth * currentPage}px)` }}
-        >
-          {children.map((child, idx) => {
-            return (
-              <div style={{ minWidth: contentWidth }} key={idx}>
-                {child}
-              </div>
-            );
-          })}
+  isAnimation = () => {
+    return this.props.animation ? 'all 0.3s' : '';
+  }
+
+  handleSwipeChangeIndex = (index, indexLatest) => {
+    this.setState({
+      currentPage: index,
+      direction: index < indexLatest ? 'left' : 'right',
+    });
+  }
+
+  renderContent = ({ currentPage, contentWidth, children }) => {
+    const Child = () =>
+      children.map((child, idx) => {
+        return (
+          <div style={{ minWidth: contentWidth }} key={idx}>
+            {child}
+          </div>
+        );
+      });
+
+    if (this.props.swipeable) {
+      return (
+        <div ref={node => (this.contentContainer = node)}>
+          <SwipeableViews resistance onChangeIndex={this.handleSwipeChangeIndex} index={currentPage}>
+            {Child()}
+          </SwipeableViews>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="rb-tab-content-wrap">
+          <div
+            ref={node => (this.contentContainer = node)}
+            className="rb-tab-content-container"
+            style={{
+              transform: `translateX(-${contentWidth * currentPage}px)`,
+              transition: this.isAnimation(),
+            }}
+          >
+            <Child />
+          </div>
+        </div>
+      );
+    }
   }
 
   render() {
-    const { tabs } = this.props;
-    const { currentPage, contentWidth } = this.state;
-
+    console.log('render---');
     return (
       <div className="rb-tab-container">
-        {this.renderHeader(currentPage, tabs)}
-        {this.renderContent(currentPage, contentWidth)}
+        <this.renderHeader {...this.props} {...this.state} />
+        <this.renderContent {...this.props} {...this.state} />
       </div>
     );
   }

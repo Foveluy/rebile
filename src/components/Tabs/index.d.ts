@@ -6,6 +6,8 @@ interface TabProps {
   tintColor: string
   onTabPress: Function
   onChange: Function
+  animation: Boolean
+  swipeable: Boolean
 }
 
 export default class Tab extends Component<TabProps, {}> {}
