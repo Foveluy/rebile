@@ -18,11 +18,13 @@
 [download-image]: https://img.shields.io/npm/dm/rebile.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rebile
 
-A react UI for mobile
+> A react UI for mobile
+
+## Documentation
+
+> still working on it
 
 ## todo
-
-### simple
 
 - [x] button
 - [x] tabs
@@ -36,3 +38,11 @@ A react UI for mobile
 - [ ] picker
 - [ ] radio
 - [ ] range
+
+## Contribution
+
+> Please make sure to read the Contributing Guide before making a pull request.
+
+## License
+
+MIT @ZhengFang
