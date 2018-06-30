@@ -171,12 +171,19 @@ class Tab extends React.Component {
 }
 
 Tab.propTypes = {
+  // tab 组件的数据源
   tabs: propTypes.array,
+  // 初始页面的 index, 从 0 开始
   initialPage: propTypes.number,
+  // tab 的颜色
   tintColor: propTypes.string,
+  // 当 tab 被点击时触发
   onTabPress: propTypes.func,
+  // 当 tab 切换时触发
   onChange: propTypes.func,
+  // 切换是否有动画
   animation: propTypes.bool,
+  // 能否手指滑动切换
   swipeable: propTypes.bool,
 };
 
