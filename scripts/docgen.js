@@ -13,7 +13,7 @@ function GenOneDoc(src) {
   const apidoc = md(json(indexSrc));
   const demodoc = demo(demoSrc);
 
-  fs.writeFileSync(join(src, 'docs.md'), demodoc + apidoc);
+  fs.writeFileSync(join(src, 'docs.md'), `# ${apidoc.name}\n` + demodoc + apidoc.md);
   //   console.log(apidoc);
   //   console.log(demodoc);
 }

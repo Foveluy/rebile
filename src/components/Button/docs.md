@@ -1,9 +1,11 @@
+# Button
 
-### <br/>  demo: Button 组件 demo 总览<br/> 
+### <br/> demo: Button 组件 demo 总览<br/>
+
 ```js
 const ButtonDemos = () => {
   return (
-    <div style={{ margin: 10 }}>
+    <div style={{margin: 10}}>
       <Button>default</Button>
       <WhiteSpace />
       <Button disable={true}>default</Button>
@@ -40,20 +42,16 @@ const ButtonDemos = () => {
     </div>
   );
 };
-
 ```
 
 # Button
 
-
-
-
 ## API 描述
-|名字| 描述|类型|是否需要|默认值|
-| ------------- |:-------------:|:-----:| -----:|-----:|
-|type||'defalut' or 'primary', 'warning'|false|default|
-|disable||propTypes.bool|false|false|
-|loading||propTypes.bool|false|false|
-|inline||propTypes.bool|false|false|
-|size||'large' or 'small'|false|large|
-    
+
+| 名字    | 描述 |                类型                 | 是否需要 |  默认值 |
+| ------- | :--: | :---------------------------------: | -------: | ------: |
+| type    |      | 'defalut' or 'primary' or 'warning' |    false | default |
+| disable |      |                bool                 |    false |   false |
+| loading |      |                bool                 |    false |   false |
+| inline  |      |                bool                 |    false |   false |
+| size    |      |         'large' or 'small'          |    false |   large |

@@ -7,7 +7,7 @@ import WhiteSpace from '../Blank';
  */
 const ButtonDemos = () => {
   return (
-    <div style={{ margin: 10 }}>
+    <div style={{margin: 10}}>
       <Button>default</Button>
       <WhiteSpace />
       <Button disable={true}>default</Button>
