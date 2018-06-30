@@ -2,6 +2,9 @@ import React from 'react';
 import Button from '.';
 import WhiteSpace from '../Blank';
 
+/**
+ * demo: Button 组件 demo 总览
+ */
 const ButtonDemos = () => {
   return (
     <div style={{ margin: 10 }}>
