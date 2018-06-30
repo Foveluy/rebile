@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import Spiner from '../Spiner';
+import propTypes from 'prop-types';
 
 class Button extends React.Component {
   state = {
@@ -60,5 +61,13 @@ class Button extends React.Component {
     );
   }
 }
+
+Button.propTypes = {
+  type: propTypes.oneOf(['defalut', 'primary', 'warning']),
+  disable: propTypes.bool,
+  loading: propTypes.bool,
+  inline: propTypes.bool,
+  size: propTypes.oneOf(['large', 'small']),
+};
 
 export default Button;
