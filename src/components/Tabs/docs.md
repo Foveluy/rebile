@@ -93,12 +93,12 @@ const TabsDemo = () => (
 
 ## API 描述
 
-| 名字        | 描述 |  类型  | 是否需要 |    默认值 |
-| ----------- | :--: | :----: | -------: | --------: |
-| tabs        |      | array  |    false | undefined |
-| initialPage |      | number |    false |         0 |
-| tintColor   |      | string |    false |   #FF9900 |
-| onTabPress  |      |  func  |    false | undefined |
-| onChange    |      |  func  |    false | undefined |
-| animation   |      |  bool  |    false |      true |
-| swipeable   |      |  bool  |    false |     false |
+| 名字        |            描述             |  类型  | 是否需要 |    默认值 |
+| ----------- | :-------------------------: | :----: | -------: | --------: |
+| tabs        |      tab 组件的数据源       | array  |    false | undefined |
+| initialPage | 初始页面的 index, 从 0 开始 | number |    false |         0 |
+| tintColor   |         tab 的颜色          | string |    false |   #FF9900 |
+| onTabPress  |     当 tab 被点击时触发     |  func  |    false | undefined |
+| onChange    |      当 tab 切换时触发      |  func  |    false | undefined |
+| animation   |       切换是否有动画        |  bool  |    false |      true |
+| swipeable   |      能否手指滑动切换       |  bool  |    false |     false |
