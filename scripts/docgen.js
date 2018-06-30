@@ -1,11 +1,25 @@
-const { json, md, demo } = require("react-component-json");
-const fs = require("fs");
+const { json, md, demo } = require('react-component-json');
+const fs = require('fs');
+const { resolve, join } = require('path');
 
-const src = fs.readFileSync("./src/components/Tabs/index.js", "utf8");
-const demoSrc = fs.readFileSync("./src/components/Tabs/demo.js", "utf8");
+const componentSrc = './src/components';
 
-const apidoc = md(json(src));
-const demodoc = demo(demoSrc);
+function GenOneDoc(src) {
+  const indexjs = join(src, 'index.js');
+  const demojs = join(src, 'demo.js');
+  const indexSrc = fs.readFileSync(indexjs, 'utf8');
+  const demoSrc = fs.readFileSync(demojs, 'utf8');
 
-console.log(apidoc);
-console.log(demodoc);
+  const apidoc = md(json(indexSrc));
+  const demodoc = demo(demoSrc);
+
+  console.log(apidoc);
+  console.log(demodoc);
+}
+
+const dirs = fs.readdirSync(componentSrc);
+
+dirs.forEach(dir => {
+  const absolute = resolve('./src/components', dir);
+  GenOneDoc(absolute);
+});
