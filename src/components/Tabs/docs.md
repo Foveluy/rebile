@@ -1,5 +1,7 @@
 # Tab
 
+<br/> 用于页面内导航<br/>
+
 ### <br/> demo: 一般性使用<br/>
 
 ```js
@@ -86,10 +88,6 @@ const TabsDemo = () => (
   </div>
 );
 ```
-
-# Tab
-
-<br/> 用于页面内导航<br/>
 
 ## API 描述
 

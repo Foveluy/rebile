@@ -44,8 +44,6 @@ const ButtonDemos = () => {
 };
 ```
 
-# Button
-
 ## API 描述
 
 | 名字    | 描述 |                类型                 | 是否需要 |  默认值 |

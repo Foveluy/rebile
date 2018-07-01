@@ -1,7 +1,5 @@
 # Spiner
 
-# Spiner
-
 <br/> Spiner 组件<br/>
 
 ## API 描述

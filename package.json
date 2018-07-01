@@ -119,7 +119,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-cli": "^23.1.0",
     "pre-commit": "^1.2.2",
-    "react-component-json": "^1.6.0",
+    "react-component-json": "^1.7.1",
     "react-live": "^1.10.1"
   }
 }

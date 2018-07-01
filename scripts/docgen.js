@@ -1,6 +1,6 @@
-const { json, md, demo } = require('react-component-json');
+const {json, md, demo} = require('react-component-json');
 const fs = require('fs');
-const { resolve, join } = require('path');
+const {resolve, join} = require('path');
 
 const componentSrc = './src/components';
 
@@ -13,7 +13,10 @@ function GenOneDoc(src) {
   const apidoc = md(json(indexSrc));
   const demodoc = demo(demoSrc);
 
-  fs.writeFileSync(join(src, 'docs.md'), `# ${apidoc.name}\n` + demodoc + apidoc.md);
+  fs.writeFileSync(
+    join(src, 'docs.md'),
+    `# ${apidoc.name}\n ${apidoc.description}` + demodoc + apidoc.md
+  );
   //   console.log(apidoc);
   //   console.log(demodoc);
 }
