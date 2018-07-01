@@ -26,11 +26,10 @@
 
 - [x] documentation gen
 - [ ] simple documentation site
-    - [ ] simple component navigation
-    - [ ] simple index
+  - [ ] simple component navigation
+  - [ ] simple index
 
 ## todo
-
 
 - [x] button
 - [x] tabs
