@@ -24,7 +24,13 @@
 
 > still working on it
 
+- [x] documentation gen
+- [ ] simple documentation site
+    - [ ] simple component navigation
+    - [ ] simple index
+
 ## todo
+
 
 - [x] button
 - [x] tabs

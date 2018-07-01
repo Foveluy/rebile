@@ -1,31 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import ButtonDemos from './components/Button/demo';
 import TabsDemo from './components/Tabs/demo';
-import { Router } from '@reach/router';
-import TabsDemoMD from './components/Tabs/demo.md';
-import { LiveProvider, LiveError, LivePreview, LiveEditor } from 'react-live';
-import Tab from './components/Tabs/index';
-
-const Code = ({ children }) => {
-  console.log(children);
-  return (
-    <LiveProvider scope={{ Tab }} code={children}>
-      <LiveEditor />
-      <LiveError />
-      <LivePreview />
-    </LiveProvider>
-  );
-};
+import {Router} from '@reach/router';
 
 const Home = () => (
   <div>
-    <TabsDemoMD
-      components={{
-        code: Code,
-      }}
+    <iframe
+      width="375"
+      height="600"
+      src="http://localhost:3000/tabs"
+      frameBorder="0"
     />
-    <iframe width="375" height="600" src="http://localhost:3000/tabs" frameBorder="0" />
   </div>
 );
 
