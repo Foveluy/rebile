@@ -39,7 +39,8 @@ class App extends Component {
         <Router>
           <Home path="/" />
           <TabsDemo path="/tabs" />
-          <ButtonDemos path="buttons" />
+          <ButtonDemos path="/buttons" />
+          <InputItemDemo path="/input" />
         </Router>
       </div>
     );

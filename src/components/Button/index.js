@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import './index.css';
 import Spiner from '../Spiner';
 import propTypes from 'prop-types';
@@ -14,10 +15,18 @@ class Button extends React.Component {
     inline: false,
     size: 'large',
   };
-
+  getButtonClassNames() {
+    const { inline, size, type, disable } = this.props;
+    const { isClick } = this.state;
+    console.log(this.props);
+    return classNames('rb-button', type, `rb-button-${size}`, {
+      'rb-button-inline': inline,
+      'rb-button-active': isClick,
+      'rb-button-disabled': disable,
+    });
+  }
   render() {
-    const {children, type, disable, loading, inline, size} = this.props;
-    const {isClick} = this.state;
+    const { children, type, disable, loading, className } = this.props;
 
     // for touch
     const touchEvent = disable
@@ -38,24 +47,11 @@ class Button extends React.Component {
       </div>
     ) : null;
 
-    const isInline = inline ? 'rb-button-inline' : '';
-    const _size = 'rb-button-' + size;
-
     return (
       <button
-        className={
-          isClick
-            ? `rb-button ${type} ${isInline} ${_size} rb-button-active`
-            : `rb-button ${type} ${_size} ${isInline}`
-        }
-        style={{
-          padding: '0 15px',
-          opacity: disable ? 0.5 : 1,
-          border: 'none',
-          borderRadius: 5,
-          outline: 'none',
-        }}
-        {...touchEvent}>
+        className={classNames(this.getButtonClassNames(), className)}
+        {...touchEvent}
+      >
         {isLoading}
         {children}
       </button>
