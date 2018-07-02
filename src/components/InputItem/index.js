@@ -14,7 +14,7 @@ class InputItem extends React.Component {
     return value;
   }
   getInputClassName() {
-    const { disabled, size } = this.props;
+    const {disabled, size} = this.props;
     return classNames('rb-input', {
       'rb-input-sm': size === 'small',
       'rb-input-lg': size === 'large',
@@ -22,14 +22,18 @@ class InputItem extends React.Component {
     });
   }
   render() {
-    const { className, getRef, ...otherProps } = this.props;
+    const {className, getRef, ...otherProps} = this.props;
     if ('value' in this.props) {
       otherProps.value = this.fixValue(otherProps.value);
       delete otherProps.defaultValue;
     }
     return (
       <label>
-        <input className={classNames(this.getInputClassName(), className)} ref={getRef} {...otherProps} />
+        <input
+          className={classNames(this.getInputClassName(), className)}
+          ref={getRef}
+          {...otherProps}
+        />
       </label>
     );
   }

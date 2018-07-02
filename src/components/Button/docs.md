@@ -1,7 +1,6 @@
 # Button
-
-### <br/> demo: Button 组件 demo 总览<br/>
-
+ 
+### <br/>  demo: Button 组件 demo 总览<br/> 
 ```js
 const ButtonDemos = () => {
   return (
@@ -42,14 +41,15 @@ const ButtonDemos = () => {
     </div>
   );
 };
+
 ```
 
 ## API 描述
-
-| 名字    | 描述 |                类型                 | 是否需要 |  默认值 |
-| ------- | :--: | :---------------------------------: | -------: | ------: |
-| type    |      | 'defalut' or 'primary' or 'warning' |    false | default |
-| disable |      |                bool                 |    false |   false |
-| loading |      |                bool                 |    false |   false |
-| inline  |      |                bool                 |    false |   false |
-| size    |      |         'large' or 'small'          |    false |   large |
+|名字| 描述|类型|是否需要|默认值|
+| ------------- |:-------------:|:-----:| -----:|-----:|
+|type||'defalut' or 'primary' or 'warning'|false|default|
+|disable||bool|false|false|
+|loading||bool|false|false|
+|inline||bool|false|false|
+|size||'large' or 'small'|false|large|
+    

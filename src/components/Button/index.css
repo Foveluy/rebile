@@ -1,15 +1,14 @@
 .rb-button {
-    background-color: #fff;
-    position: relative;
-    align-items: unset;
-    width: 100%;
-    font-size: 18px;
-    height: 47px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    padding: 0 15px;
-    cursor: pointer;
+  background-color: #fff;
+  position: relative;
+  align-items: unset;
+  width: 100%;
+  font-size: 18px;
+  height: 47px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 15px;
 }
 
 .rb-button::after {
@@ -26,9 +25,9 @@
   height: 200%;
 }
 
-.rb-button-disabled{
-    opacity: 0.5;
-    cursor: not-allowed;
+.rb-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .rb-button.primary {

@@ -16,8 +16,8 @@ class Button extends React.Component {
     size: 'large',
   };
   getButtonClassNames() {
-    const { inline, size, type, disable } = this.props;
-    const { isClick } = this.state;
+    const {inline, size, type, disable} = this.props;
+    const {isClick} = this.state;
     console.log(this.props);
     return classNames('rb-button', type, `rb-button-${size}`, {
       'rb-button-inline': inline,
@@ -26,7 +26,7 @@ class Button extends React.Component {
     });
   }
   render() {
-    const { children, type, disable, loading, className } = this.props;
+    const {children, type, disable, loading, className} = this.props;
 
     // for touch
     const touchEvent = disable
@@ -50,8 +50,7 @@ class Button extends React.Component {
     return (
       <button
         className={classNames(this.getButtonClassNames(), className)}
-        {...touchEvent}
-      >
+        {...touchEvent}>
         {isLoading}
         {children}
       </button>

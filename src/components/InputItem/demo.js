@@ -2,20 +2,20 @@ import React from 'react';
 import Input from '.';
 
 class InputDemos extends React.Component {
-  state = { value: '' };
+  state = {value: ''};
   handleChange = e => {
-    this.setState({ value: e.target.value });
+    this.setState({value: e.target.value});
   };
   componentDidMount() {
     console.log(this.input);
   }
   render() {
-    let { value } = this.state;
+    let {value} = this.state;
     return (
-      <div style={{ margin: 10 }}>
+      <div style={{margin: 10}}>
         <Input
           getRef={input => (this.input = input)}
-          style={{ width: '50%' }}
+          style={{width: '50%'}}
           disabled={false}
           value={value}
           size="middle"
@@ -29,7 +29,7 @@ class InputDemos extends React.Component {
         />
         <Input
           getRef={input => (this.input = input)}
-          style={{ width: '60%', margin: '10px 0' }}
+          style={{width: '60%', margin: '10px 0'}}
           disabled={true}
           size="large"
           className="test-class"

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import {Router} from '@reach/router';
 import './App.css';
 import ButtonDemos from './components/Button/demo';
 import TabsDemo from './components/Tabs/demo';
-import {Router} from '@reach/router';
+import InputItemDemo from './components/InputItem/demo';
 import Docs from './components/Tabs/docs.md';
 import {CodeBlock} from './doc/components/code';
 
