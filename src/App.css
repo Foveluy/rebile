@@ -1,28 +1,34 @@
-.App {
-  text-align: center;
+.rb-content {
+    margin-left: 350px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+table {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    border: 1px solid #dfe2e5;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+table th {
+    border: 1px solid #dfe2e5;
+    padding: .6em 1em;
+    font-weight: 900;
+    font-size: 17px;
+    background-color: #f6f8fa;
 }
 
-.App-title {
-  font-size: 1.5em;
+table tr {
+    border-top: 1px solid #dfe2e5;
 }
 
-.App-intro {
-  font-size: large;
+table tr td {
+    border: 1px solid #dfe2e5;
+    background: 1px solid #dfe2e5;
+    padding: .6em 1em;
+    font-weight: 700;
+    font-size: 15px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+tr:nth-child(2n) {
+    background-color: #f6f8fa;
 }

@@ -32,7 +32,11 @@
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
+    "prettier": "^1.13.7",
+    "prism-languages": "^0.4.0",
+    "prismjs": "^1.15.0",
     "promise": "8.0.1",
+    "prop-types": "^15.6.2",
     "raf": "3.4.0",
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
@@ -48,6 +52,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "format": "prettier --config ./.prettierrc --write './src/*/**'",
+    "docgen": "node scripts/docgen.js",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
@@ -56,6 +62,8 @@
     "ci": "npm run cov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "pre-commit": [
+    "docgen",
+    "format",
     "lint"
   ],
   "jest": {
@@ -111,6 +119,8 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-cli": "^23.1.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "react-component-json": "^1.7.1",
+    "react-live": "^1.10.1"
   }
 }

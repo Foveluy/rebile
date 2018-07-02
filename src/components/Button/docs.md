@@ -1,10 +1,8 @@
-import React from 'react';
-import Button from '.';
-import WhiteSpace from '../Blank';
+# Button
 
-/**
- * demo: Button 组件 demo 总览
- */
+### <br/> demo: Button 组件 demo 总览<br/>
+
+```js
 const ButtonDemos = () => {
   return (
     <div style={{margin: 10}}>
@@ -44,5 +42,14 @@ const ButtonDemos = () => {
     </div>
   );
 };
+```
 
-export default ButtonDemos;
+## API 描述
+
+| 名字    | 描述 |                类型                 | 是否需要 |  默认值 |
+| ------- | :--: | :---------------------------------: | -------: | ------: |
+| type    |      | 'defalut' or 'primary' or 'warning' |    false | default |
+| disable |      |                bool                 |    false |   false |
+| loading |      |                bool                 |    false |   false |
+| inline  |      |                bool                 |    false |   false |
+| size    |      |         'large' or 'small'          |    false |   large |

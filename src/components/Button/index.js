@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import './index.css';
 import Spiner from '../Spiner';
+import propTypes from 'prop-types';
 
 class Button extends React.Component {
   state = {
@@ -32,16 +33,16 @@ class Button extends React.Component {
       ? {}
       : {
           onTouchStart: () => {
-            this.setState({ isClick: true });
+            this.setState({isClick: true});
           },
           onTouchEnd: () => {
-            this.setState({ isClick: false });
+            this.setState({isClick: false});
           },
         };
 
     // for button loading
     const isLoading = loading ? (
-      <div style={{ marginRight: 140 }}>
+      <div style={{marginRight: 140}}>
         <Spiner color={type === 'default' ? undefined : 'white'} />
       </div>
     ) : null;
@@ -57,5 +58,13 @@ class Button extends React.Component {
     );
   }
 }
+
+Button.propTypes = {
+  type: propTypes.oneOf(['defalut', 'primary', 'warning']),
+  disable: propTypes.bool,
+  loading: propTypes.bool,
+  inline: propTypes.bool,
+  size: propTypes.oneOf(['large', 'small']),
+};
 
 export default Button;
