@@ -1,0 +1,54 @@
+.rb-input {
+  width: 100%;
+  height: 32px;
+  margin: 0;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  transition: all 0.3s;
+}
+
+.rb-input-lg {
+  height: 40px;
+}
+
+.rb-input-sm {
+  height: 24px;
+}
+
+.rb-input-disabled {
+  cursor: not-allowed;
+}
+
+.rb-input::-moz-placeholder {
+  color: #bfbfbf;
+  opacity: 1;
+}
+
+.rb-input:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.rb-input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.rb-input:focus,
+.rb-input:hover {
+  border-color: #108ee9;
+  border-right-width: 1px !important;
+}
+
+.rb-input:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}

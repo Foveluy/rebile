@@ -38,7 +38,7 @@
 - [ ] datepicker
 - [ ] datepickerview
 - [ ] image picker
-- [ ] inputitem
+- [x] inputitem
 - [ ] pickerview
 - [ ] picker
 - [ ] radio
