@@ -26,12 +26,16 @@ const Home = () => (
       <iframe
         width="375"
         height="600"
-        src="http://localhost:3000/tabs"
+        src="http://localhost:3000/demos/tabs"
         frameBorder="0"
       />
     </div>
   </div>
 );
+
+const DemoWrapper = ({children}) => {
+  return <React.Fragment>{children}</React.Fragment>;
+};
 
 class App extends Component {
   render() {
@@ -39,9 +43,12 @@ class App extends Component {
       <div className="App">
         <Router>
           <Home path="/" />
-          <TabsDemo path="/tabs" />
-          <ButtonDemos path="/buttons" />
-          <InputItemDemo path="/input" />
+          
+          <DemoWrapper path="demos">
+            <TabsDemo path="/tabs" />
+            <ButtonDemos path="/buttons" />
+            <InputItemDemo path="/input" />
+          </DemoWrapper>
         </Router>
       </div>
     );

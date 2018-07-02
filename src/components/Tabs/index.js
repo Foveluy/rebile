@@ -4,7 +4,6 @@ import SwipeableViews from 'react-swipeable-views'; /** https://react-swipeable-
 import propTypes from 'prop-types';
 
 // const win = window;
-
 const UnderLineBar = ({leftDistance, tintColor, direction, animation}) => {
   return (
     <div
