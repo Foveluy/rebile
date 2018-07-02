@@ -15,7 +15,7 @@ function GenOneDoc(src) {
 
   fs.writeFileSync(
     join(src, 'docs.md'),
-    `# ${apidoc.name}\n ${apidoc.description}` + demodoc + apidoc.md
+    [`# ${apidoc.name}`, `${apidoc.description}`, demodoc, apidoc.md].join('\n')
   );
   //   console.log(apidoc);
   //   console.log(demodoc);
