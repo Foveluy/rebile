@@ -4,9 +4,12 @@ import './App.css';
 import ButtonDemos from './components/Button/demo';
 import TabsDemo from './components/Tabs/demo';
 import InputItemDemo from './components/InputItem/demo';
-import Docs from './components/Tabs/docs.md';
-import {CodeBlock} from './doc/components/code';
 import DrawerDemo from './components/Drawer/demo';
+import Collapse from './components/Collapse/demo';
+
+import {CodeBlock} from './doc/components/code';
+
+import Docs from './components/Tabs/docs.md';
 
 const Home = () => (
   <div style={{display: 'flex'}}>
@@ -45,6 +48,7 @@ class App extends Component {
         <Router>
           <Home path="/" />
           <DemoWrapper path="demos">
+            <Collapse path="collapse" />
             <DrawerDemo path="drawer" />
             <TabsDemo path="/tabs" />
             <ButtonDemos path="/buttons" />

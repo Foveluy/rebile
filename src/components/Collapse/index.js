@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.scss';
 import {Motion, spring} from 'react-motion';
 import propTypes from 'prop-types';
 
@@ -8,11 +7,12 @@ import propTypes from 'prop-types';
  */
 export class Panel extends React.Component {
   state = {
-    open: false,
-    boxHeight: 100,
+    boxHeight: 0,
   };
   static defaultProps = {
     header: () => 'panel-header',
+    onClick: () => void 666,
+    open: false,
   };
 
   handleClick = e => {
@@ -40,7 +40,7 @@ export class Panel extends React.Component {
           {value => (
             <div
               className="rb-collapse-panel-content"
-              style={{height: `${value.x}px`}}>
+              style={{height: `${value.x}px`, overflow: 'hidden'}}>
               <div
                 // why we have this is that
                 // we have to have a box for reading the content height
@@ -64,10 +64,12 @@ export class Panel extends React.Component {
 export class Collapse extends React.Component {
   state = {
     current: -1,
+    normalKey: {},
   };
 
   static defaultProps = {
     style: {},
+    accordion: true,
   };
 
   handleClick = index => {
@@ -79,17 +81,38 @@ export class Collapse extends React.Component {
     });
   };
 
+  handleNormalModeClick = index => {
+    const key = {...this.state.normalKey};
+    if (!key[index]) key[index] = true;
+    else key[index] = !key[index];
+
+    this.setState({
+      normalKey: key,
+    });
+  };
+
   render() {
     const {children} = this.props;
     const Chilren = children.length > 0 ? children : [children];
-
     return (
       <div style={this.props.style}>
         {Chilren.map((Child, index) => {
-          return React.cloneElement(Child, {
-            open: this.state.current === index ? true : false,
-            onClick: () => this.handleClick(index),
-          });
+          if (this.props.accordion) {
+            // if component is `accordion`
+            // we have to close any other panel
+            // which are not `current`
+            return React.cloneElement(Child, {
+              open: this.state.current === index ? true : false,
+              onClick: () => this.handleClick(index),
+            });
+          } else {
+            // if component is not `accordion`
+            // we dont need to close any one
+            return React.cloneElement(Child, {
+              open: this.state.normalKey[index],
+              onClick: () => this.handleNormalModeClick(index),
+            });
+          }
         })}
       </div>
     );

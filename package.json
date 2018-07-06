@@ -60,6 +60,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "lint": "eslint ./src",
     "cov": "npm test -- --coverage",
+    "gitadd": "git add .",
     "ci": "npm run cov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "pre-commit": [
