@@ -65,7 +65,8 @@
   },
   "pre-commit": [
     "format",
-    "lint"
+    "lint",
+    "gitadd"
   ],
   "jest": {
     "collectCoverageFrom": [
