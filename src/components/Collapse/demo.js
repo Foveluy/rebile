@@ -25,7 +25,7 @@ const Demo1 = () => (
 );
 
 /**
- * demo2: 普通模式
+ * demo: 普通模式
  */
 const Demo2 = () => (
   <Collapse accordion={false}>

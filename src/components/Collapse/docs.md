@@ -1,6 +1,6 @@
 # Collapse
 
-### <br/> demo: 手风琴模式<br/> <br/> demo2: 普通模式<br/>
+### <br/> demo: 手风琴模式<br/>
 
 ```js
 const Demo1 = () => (
@@ -22,6 +22,11 @@ const Demo1 = () => (
     </Panel>
   </Collapse>
 );
+```
+
+### <br/> demo: 普通模式<br/>
+
+```js
 const Demo2 = () => (
   <Collapse accordion={false}>
     <Panel key={1} header={open => <div>列表1{open ? '打开' : '关闭'}</div>}>
