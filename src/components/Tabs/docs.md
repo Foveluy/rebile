@@ -74,6 +74,47 @@ const Swipeable = () => (
     <div style={{height: 100, backgroundColor: 'white'}}>tab5</div>
   </Tab>
 );
+```
+
+### <br/> demo: 不同个数的 tabs<br/>
+
+```js
+const TabsNumber = () => (
+  <Tab tabs={Tabs5} tabsNumber={5}>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab1</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab2</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab3</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab4</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab5</div>
+  </Tab>
+);
+```
+
+### <br/> demo: 显示 5 个 tabs<br/> 以及超过 5 个的时候<br/> <br/>
+
+```js
+const Tabs8 = [
+  {title: 'First'},
+  {title: 'Second'},
+  {title: 'Third'},
+  {title: 'Forth'},
+  {title: 'Fifth'},
+  {title: 'Six'},
+  {title: 'Seven'},
+  {title: 'Eight'},
+];
+const TabsNumberOverFive = () => (
+  <Tab tabs={Tabs8} tabsNumber={5}>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab1</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab2</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab3</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab4</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab5</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab6</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab7</div>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab8</div>
+  </Tab>
+);
 const TabsDemo = () => (
   <div>
     <Normal />
@@ -85,6 +126,10 @@ const TabsDemo = () => (
     <NoAnimation />
     <WhiteSpace />
     <Swipeable />
+    <WhiteSpace />
+    <TabsNumber />
+    <WhiteSpace />
+    <TabsNumberOverFive />
   </div>
 );
 ```
@@ -100,3 +145,4 @@ const TabsDemo = () => (
 | onChange    |      当 tab 切换时触发      |  func  |    false | undefined |
 | animation   |       切换是否有动画        |  bool  |    false |      true |
 | swipeable   |      能否手指滑动切换       |  bool  |    false |     false |
+| tabsNumber  |   tabs 在屏幕中显示的个数   | number |    false |         3 |

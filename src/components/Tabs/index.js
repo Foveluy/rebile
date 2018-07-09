@@ -4,13 +4,19 @@ import SwipeableViews from 'react-swipeable-views'; /** https://react-swipeable-
 import propTypes from 'prop-types';
 
 // const win = window;
-const UnderLineBar = ({leftDistance, tintColor, direction, animation}) => {
+const UnderLineBar = ({
+  leftDistance,
+  tintColor,
+  direction,
+  animation,
+  tabsNumber,
+}) => {
   return (
     <div
       className={`rb-tab-underline ${animation ? direction : ''}`}
       style={{
         left: `${leftDistance}%`,
-        right: `${(100 / 3) * 2 - leftDistance}%`,
+        right: `${(100 / tabsNumber) * (tabsNumber - 1) - leftDistance}%`,
         borderColor: tintColor,
         top: 42.5,
       }}
@@ -36,6 +42,7 @@ class Tab extends React.Component {
     onChange: undefined,
     animation: true,
     swipeable: false,
+    tabsNumber: 3,
   };
 
   componentDidMount() {
@@ -61,16 +68,22 @@ class Tab extends React.Component {
   };
 
   renderHeader = ({currentPage, tabs}) => {
-    const itemWith = 33.3333;
+    const {tabsNumber} = this.props;
+
+    const itemWith = 100 / tabsNumber;
     // controlling the header move around
     let translate = `translateX(${
       currentPage > 1 ? -itemWith * (currentPage - 1) : 0
     }%)`;
     // when reach the last one
     // do not move the header
+
+    // 因为始终要现实 tabsNumber 个，因此这里参数是 tabsNumber
+    const i = tabsNumber - tabs.length + currentPage;
+
     translate =
-      currentPage + 1 === tabs.length
-        ? `translateX(${-itemWith * (currentPage - 2)}%)`
+      currentPage + (tabsNumber - 2) >= tabs.length
+        ? `translateX(${-itemWith * (currentPage - i)}%)`
         : translate;
     return (
       <div className="rb-tab-header-wrapper">
@@ -88,6 +101,7 @@ class Tab extends React.Component {
               <div
                 style={{
                   color: active === 'rb-tab-active' ? this.props.tintColor : '',
+                  minWidth: `${100 / tabsNumber}%`,
                 }}
                 onTouchEnd={e => this.handleHeaderTouch(e, idx)}
                 onClick={e => this.handleHeaderTouch(e, idx)}
@@ -98,6 +112,7 @@ class Tab extends React.Component {
             );
           })}
           <UnderLineBar
+            tabsNumber={tabsNumber}
             direction={this.state.direction}
             tintColor={this.props.tintColor}
             leftDistance={itemWith * currentPage}
@@ -184,6 +199,8 @@ Tab.propTypes = {
   animation: propTypes.bool,
   // 能否手指滑动切换
   swipeable: propTypes.bool,
+  // tabs 在屏幕中显示的个数
+  tabsNumber: propTypes.number,
 };
 
 export default Tab;
