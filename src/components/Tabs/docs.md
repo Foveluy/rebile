@@ -115,6 +115,16 @@ const TabsNumberOverFive = () => (
     <div style={{height: 100, backgroundColor: 'white'}}>tab8</div>
   </Tab>
 );
+```
+
+### <br/> demo: 只有一个孩子<br/>
+
+```js
+const TabsWithOneChild = () => (
+  <Tab tabs={Tabs5}>
+    <div style={{height: 100, backgroundColor: 'white'}}>tab1</div>
+  </Tab>
+);
 const TabsDemo = () => (
   <div>
     <Normal />
@@ -130,6 +140,8 @@ const TabsDemo = () => (
     <TabsNumber />
     <WhiteSpace />
     <TabsNumberOverFive />
+    <WhiteSpace />
+    <TabsWithOneChild />
   </div>
 );
 ```
