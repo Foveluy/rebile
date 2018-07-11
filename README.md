@@ -33,6 +33,7 @@
 
 - [x] button
 - [x] tabs
+  - [] tab header
 - [x] drawer
 - [x] collapse
 - [ ] calendar
@@ -45,6 +46,7 @@
 - [ ] picker
 - [ ] radio
 - [ ] range
+- [ ] dotdotdot http://hai.li/2017/03/08/css-multiline-overflow-ellipsis.html
 
 ## Contribution
 
