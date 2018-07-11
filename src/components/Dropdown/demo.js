@@ -8,7 +8,7 @@ import Button from '../Button';
 const Demo = () => {
   return (
     <div>
-      <Dropdown />
+      <Dropdown open={false} />
       <Button size="small">Show</Button>
     </div>
   );
