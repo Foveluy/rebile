@@ -136,14 +136,13 @@ class Tab extends React.Component {
   };
 
   renderContent = ({currentPage, contentWidth, children}) => {
-    const Child = () =>
-      children.map((child, idx) => {
-        return (
-          <div style={{minWidth: contentWidth}} key={idx}>
-            {child}
-          </div>
-        );
-      });
+    const Child = () => {
+      return React.Children.map(children, (child, idx) => (
+        <div style={{minWidth: contentWidth}} key={idx}>
+          {child}
+        </div>
+      ));
+    };
 
     if (this.props.swipeable) {
       return (

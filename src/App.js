@@ -10,6 +10,7 @@ import Collapse from './components/Collapse/demo';
 import {CodeBlock} from './doc/components/code';
 
 import Docs from './components/Tabs/docs.md';
+import Dropdown from './components/Dropdown/demo';
 
 const Home = () => (
   <div style={{display: 'flex'}}>
@@ -50,6 +51,7 @@ class App extends Component {
           <DemoWrapper path="demos">
             <Collapse path="collapse" />
             <DrawerDemo path="drawer" />
+            <Dropdown path="/dropdown" />
             <TabsDemo path="/tabs" />
             <ButtonDemos path="/buttons" />
             <InputItemDemo path="/input" />

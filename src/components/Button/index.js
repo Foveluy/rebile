@@ -18,7 +18,6 @@ class Button extends React.Component {
   getButtonClassNames() {
     const {inline, size, type, disable} = this.props;
     const {isClick} = this.state;
-    console.log(this.props);
     return classNames('rb-button', type, `rb-button-${size}`, {
       'rb-button-inline': inline,
       'rb-button-active': isClick,
@@ -59,7 +58,7 @@ class Button extends React.Component {
 }
 
 Button.propTypes = {
-  type: propTypes.oneOf(['defalut', 'primary', 'warning']),
+  type: propTypes.oneOf(['default', 'primary', 'warning']),
   disable: propTypes.bool,
   loading: propTypes.bool,
   inline: propTypes.bool,
