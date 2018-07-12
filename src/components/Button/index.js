@@ -14,6 +14,7 @@ class Button extends React.Component {
     loading: false,
     inline: false,
     size: 'large',
+    onClick: () => void 777,
   };
   getButtonClassNames() {
     const {inline, size, type, disable} = this.props;
@@ -36,6 +37,7 @@ class Button extends React.Component {
           },
           onTouchEnd: () => {
             this.setState({isClick: false});
+            this.props.onClick();
           },
         };
 
