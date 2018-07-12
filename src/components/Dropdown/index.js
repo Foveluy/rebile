@@ -7,6 +7,9 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
+/**
+ * 下拉菜单
+ */
 class Dropdown extends React.Component {
   static defaultProps = {
     open: false,

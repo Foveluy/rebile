@@ -2,9 +2,6 @@ import React from 'react';
 import Dropdown from './';
 import Button from '../Button';
 
-/**
- * Demo: 最简单的dropdown
- */
 class Toggle extends React.Component {
   state = {
     toggle: false,
@@ -18,6 +15,9 @@ class Toggle extends React.Component {
     return this.props.children(this.state.toggle, this.set);
   }
 }
+/**
+ * demo: 最简单的dropdown
+ */
 const Demo = () => {
   return (
     <div>
