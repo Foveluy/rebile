@@ -16,7 +16,6 @@ class Dropdown extends React.Component {
 
   render() {
     const {height, open} = this.props;
-
     const openedHeight = Branch(open, height, 0);
     const defaultHeight = Branch(open, 0, height);
 
