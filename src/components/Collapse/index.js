@@ -61,7 +61,7 @@ export class Panel extends React.Component {
 /**
  * 折叠菜单，用于多条菜单的显示
  */
-export class Collapse extends React.Component {
+class Collapse extends React.Component {
   state = {
     current: -1,
     normalKey: {},
@@ -118,6 +118,8 @@ export class Collapse extends React.Component {
     );
   }
 }
+
+export default Collapse;
 
 Collapse.propTypes = {
   // 最外层的 `div` 组件的 style
