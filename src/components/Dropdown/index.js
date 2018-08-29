@@ -1,6 +1,7 @@
 import React from 'react';
 import {Motion, spring} from 'react-motion';
 import styled from 'styled-components';
+import propType from 'prop-types';
 import {Branch} from '../../utils/branch';
 
 const Container = styled.div`
@@ -31,5 +32,10 @@ class Dropdown extends React.Component {
     );
   }
 }
+
+Dropdown.propType = {
+  open: propType.bool,
+  height: propType.number,
+};
 
 export default Dropdown;
