@@ -4,14 +4,13 @@ import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {mount, shallow} from 'enzyme';
 import {expect} from 'chai';
-import InputItem from '../index';
+import InputItem from '..';
 
 configure({adapter: new Adapter()});
 
-describe('Input component test', () => {
-  it('input `style` testing ', () => {
-    const wrapper = mount(<InputItem />);
-    const cov = wrapper.find('.rb-input');
-    const style = cov.getDOMNode().style;
+describe('InputItem component test', () => {
+  it('input `size` testing ', () => {
+    const wrapper = mount(<InputItem size="small" />);
+    expect(wrapper.props().size).to.equal('small');
   });
 });

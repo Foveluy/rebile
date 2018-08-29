@@ -38,7 +38,7 @@ class Drawer extends React.Component {
 }
 
 Drawer.propTypes = {
-  width: propTypes.oneOfType(['number', 'string']),
+  width: propTypes.oneOfType([propTypes.number, propTypes.string]),
 };
 
 export default Drawer;

@@ -1,44 +1,72 @@
 import React from 'react';
 import Input from '.';
 
-class InputDemos extends React.Component {
-  state = {value: ''};
-  handleChange = e => {
-    this.setState({value: e.target.value});
-  };
-  componentDidMount() {
-    console.log(this.input);
-  }
-  render() {
-    let {value} = this.state;
-    return (
-      <div style={{margin: 10}}>
-        <Input
-          getRef={input => (this.input = input)}
-          style={{width: '50%'}}
-          disabled={false}
-          value={value}
-          size="middle"
-          className="test-class"
-          placeholder="this is demo"
-          defaultValue="basic usage"
-          onClick={() => console.log('click')}
-          onFocus={() => console.log('focus')}
-          onBlur={() => console.log('blur')}
-          onChange={this.handleChange}
-        />
-        <Input
-          getRef={input => (this.input = input)}
-          style={{width: '60%', margin: '10px 0'}}
-          disabled={true}
-          size="large"
-          className="test-class"
-          placeholder="this is demo"
-          defaultValue="basic usage"
-        />
-      </div>
-    );
-  }
-}
+/**
+ * 最简单用法
+ */
+const Normal = () => (
+  <Input
+    style={{width: '20%', margin: '10px'}}
+    className="test-class"
+    placeholder="basic usage"
+  />
+);
 
+/**
+ * 三种大小
+ */
+const AllSize = () => (
+  <div>
+    <Input
+      style={{width: '20%', margin: '10px'}}
+      size="small"
+      placeholder="small size"
+    />
+    <br />
+    <Input
+      style={{width: '20%', margin: '10px'}}
+      size="middle"
+      placeholder="middle size"
+    />
+    <br />
+    <Input
+      style={{width: '20%', margin: '10px'}}
+      size="large"
+      placeholder="large size"
+    />
+    <br />
+  </div>
+);
+
+/**
+ * 自动获取焦点
+ */
+const AutoFocus = () => (
+  <Input
+    style={{width: '20%', margin: '10px'}}
+    placeholder="autoFocus"
+    autoFocus
+  />
+);
+
+/**
+ * 禁用输入框
+ */
+const Disabled = () => (
+  <Input
+    style={{width: '20%', margin: '10px'}}
+    disabled
+    size="large"
+    placeholder="disabled"
+  />
+);
+
+const InputDemos = () => (
+  <div>
+    <Normal />
+    <AllSize />
+    <AutoFocus />
+    <Disabled />
+  </div>
+);
 export default InputDemos;

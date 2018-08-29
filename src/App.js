@@ -1,16 +1,15 @@
-import React, {Component} from 'react';
 import {Router} from '@reach/router';
+import React, {Component} from 'react';
 import './App.css';
 import ButtonDemos from './components/Button/demo';
-import TabsDemo from './components/Tabs/demo';
-import InputItemDemo from './components/InputItem/demo';
-import DrawerDemo from './components/Drawer/demo';
 import Collapse from './components/Collapse/demo';
-
-import {CodeBlock} from './doc/components/code';
-
-import Docs from './components/Tabs/docs.md';
+import DrawerDemo from './components/Drawer/demo';
 import Dropdown from './components/Dropdown/demo';
+import InputItemDemo from './components/InputItem/demo';
+import RangeDemo from './components/Range/demo';
+import TabsDemo from './components/Tabs/demo';
+import Docs from './components/Tabs/docs.md';
+import {CodeBlock} from './doc/components/code';
 
 const Home = () => (
   <div style={{display: 'flex'}}>
@@ -51,10 +50,11 @@ class App extends Component {
           <DemoWrapper path="demos">
             <Collapse path="collapse" />
             <DrawerDemo path="drawer" />
-            <Dropdown path="/dropdown" />
-            <TabsDemo path="/tabs" />
-            <ButtonDemos path="/buttons" />
-            <InputItemDemo path="/input" />
+            <Dropdown path="dropdown" />
+            <TabsDemo path="tabs" />
+            <ButtonDemos path="buttons" />
+            <InputItemDemo path="input" />
+            <RangeDemo path="range" />
           </DemoWrapper>
         </Router>
       </div>
